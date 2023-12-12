@@ -1,12 +1,12 @@
 import Carousel from 'react-bootstrap/Carousel';
-import {UseEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 
 function BestBooks() {
   
   const [books, setBooks] = useState([]);
 
-  UseEffect(()=>{
+  useEffect(()=>{
     fetch('/books')
     .then(response => response.json())
     .then(data => setBooks(data))
@@ -17,8 +17,6 @@ function BestBooks() {
   /* TODO: Make a GET request to your API to fetch all the books from the database  */
 
 
-
-    /* TODO: render all the books in a Carousel */
 
     return (
       <>

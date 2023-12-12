@@ -26,15 +26,15 @@ Clone this repo to your own account with the green "Use this template" button. T
 
 ## Change Log
 
-Name of feature: ________________________________
+Name of feature: About Page and Book Display
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 3 Hours
 
-Start time: _____
+Start time: 1900
 
-Finish time: _____
+Finish time: 2100
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2 Hours
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
@@ -43,4 +43,3 @@ Actual time needed to complete: _____
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
-

@@ -16,7 +16,7 @@ export default function BookList({ books, onDelete, onEdit }) {
           <strong>{book.title}</strong>
           {/* Include more details here if needed */}
           <div style={{ marginTop: '5px' }}>
-            <Button variant="danger" onClick={() => handleDelete(book.id)} style={{ marginRight: '5px' }}>
+            <Button variant="danger" onClick={() => handleDelete(book._id)} style={{ marginRight: '5px' }}>
               Delete
             </Button>
             <Button variant="info" onClick={() => onEdit(book)}>

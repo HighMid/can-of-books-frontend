@@ -20,8 +20,8 @@ function About() {
   return(
     <div>
       <h2>About The Devs</h2>
-      {developers.map((dev, index) => (
-        <div key={index}>
+      {developers.map(dev => (
+          <div key={dev.devName}>
           <h3>{dev.devName}</h3>
           <p>{dev.role}</p>
           <p>{dev.bio}</p>

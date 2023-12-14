@@ -4,7 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 
-function BookFormModal({ show, setShowModal, setBooks, currentBook }) {
+function BookFormModal({ show, setShowModal, setBooks, currentBook , API}) {
+
   const [formData, setFormData] = useState(currentBook || {});
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -12,7 +13,7 @@ function BookFormModal({ show, setShowModal, setBooks, currentBook }) {
     event.preventDefault();
     try {
       const response = currentBook 
-        ? await axios.patch(`/books/${currentBook.id}`, formData)
+        ? await axios.put(`${API}/${currentBook._id}`, formData)
         : await axios.post('/books', formData);
 
       setBooks(prevBooks => currentBook
@@ -51,6 +52,27 @@ function BookFormModal({ show, setShowModal, setBooks, currentBook }) {
               placeholder="Enter title"
               name="title"
               value={formData.title || ''}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              as="textarea"
+              type="text"
+              placeholder="Enter Description"
+              name="description"
+              value={formData.description || ''}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Author"
+              name="author"
+              value={formData.author || ''}
               onChange={handleChange}
             />
           </Form.Group>

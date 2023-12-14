@@ -18,7 +18,7 @@ function BestBooks() {
 
   async function fetchBooks() {
     try {
-      const response = await axios.get("https://can-of-books-backend-cdrn.onrender.com/books");
+      const response = await axios.get(API);
       setBooks(response.data);
       console.log(response.data);
     } catch (error) {
@@ -59,8 +59,8 @@ function BestBooks() {
   return (
     <div>
       <h2>My Essential Lifelong Learning & Formation Shelf</h2>
-      <button onClick={() => setShowModal(true)}>Add Book</button>
-      {showModal && <BookFormModal setShowModal={setShowModal} setBooks={setBooks} />}
+      <button onClick={() => handleAddBook()}>Add Book</button>
+      {showModal && <BookFormModal show={showModal} setShowModal={setShowModal} setBooks={setBooks} currentBook={currentBook} API={API}/>}
       {books.length > 0 ? (
         <Carousel>
           {books.map(book => (

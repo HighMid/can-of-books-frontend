@@ -5,6 +5,8 @@ import axios from 'axios';
 
 function CreateForm({ onBookCreate }) {
 
+    const API = import.meta.env.VITE_SERVER;
+
     const [bookData, setBookData] = useState({
         title: '',
         author: '',
@@ -26,7 +28,7 @@ function CreateForm({ onBookCreate }) {
         }
 
         try{
-            const response = await axios.post('https://can-of-books-backend-sdh5.onrender.com/books', bookData);
+            const response = await axios.post(`${API}/${bookData}`);
 
             console.log('Book Created ! ! !', response);
 

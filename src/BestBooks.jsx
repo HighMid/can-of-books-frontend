@@ -27,7 +27,7 @@ function BestBooks() {
   }
 
   const deleteBook = (bookId) => {
-    axios.delete(`/books/${bookId}`)
+    axios.delete(`${API}/${bookId}`)
       .then(() => {
         setBooks(prevBooks => prevBooks.filter(book => book.id !== bookId));
       })

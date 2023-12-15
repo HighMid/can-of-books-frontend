@@ -14,7 +14,7 @@ function BookFormModal({ show, setShowModal, setBooks, currentBook , API}) {
     try {
       const response = currentBook 
         ? await axios.put(`${API}/${currentBook._id}`, formData)
-        : await axios.post('/books', formData);
+        : await axios.post(API, formData);
 
       setBooks(prevBooks => currentBook
         ? prevBooks.map(book => book.id === currentBook.id ? response.data : book)

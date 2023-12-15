@@ -28,7 +28,7 @@ function CreateForm({ onBookCreate }) {
         }
 
         try{
-            const response = await axios.post(`${API}/${bookData}`);
+            const response = await axios.post(API , bookData);
 
             console.log('Book Created ! ! !', response);
 
